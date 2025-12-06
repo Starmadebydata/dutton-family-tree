@@ -3,251 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dutton Family Tree - A comprehensive wiki for the Yellowstone universe. Complete episode guides, family genealogy, and character analysis.">
-    <meta name="keywords" content="Yellowstone, Dutton Family, TV Series, 1883, 1923, Family Tree">
+    <meta name="description" content="Dutton Family Tree - Yellowstone Universe Wiki">
+    <meta name="keywords" content="Yellowstone, Dutton Family, TV Series, 1883, 1923">
     <meta name="author" content="Dutton Family Tree Project">
-    <meta name="updated" content="2025-12-06T12:00:00Z">
-    <title>Dutton Family Tree - Yellowstone Universe Wiki</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Dutton Family Tree</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #0f1419;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .link-wrapper {
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            display: inline-block;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+            text-decoration: none;
+        }
+        
+        .link-wrapper:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+            box-shadow: 0 15px 60px rgba(212, 175, 55, 0.4);
+        }
+        
+        .link-wrapper:active {
+            transform: scale(0.98);
+        }
+        
+        .link-wrapper img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .link-wrapper:hover {
+                transform: scale(1.02);
+            }
+        }
+    </style>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23d4af37'>Y</text></svg>">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <span class="logo-icon">🌲</span>
-                <span class="logo-text">Dutton Family Tree</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
-                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-                <li><a href="#series" class="nav-link" data-section="series">Series</a></li>
-                <li><a href="#docs" class="nav-link" data-section="docs">Documentation</a></li>
-                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
-                <li class="language-toggle">
-                    <button id="lang-toggle" class="lang-btn">中文</button>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title" data-en="Dutton Family Tree" data-zh="Dutton 家族谱">Dutton Family Tree</h1>
-            <p class="hero-subtitle" data-en="A Comprehensive Wiki for the Yellowstone Universe" data-zh="Yellowstone 宇宙完整维基">A Comprehensive Wiki for the Yellowstone Universe</p>
-            <p class="hero-description" data-en="Explore complete episode guides, family genealogy, character analysis, and more." data-zh="探索完整剧集指南、家族谱系、人物分析等内容。">Explore complete episode guides, family genealogy, character analysis, and more.</p>
-            <div class="hero-buttons">
-                <a href="#series" class="btn btn-primary" data-en="Explore Series" data-zh="浏览系列">Explore Series</a>
-                <a href="#docs" class="btn btn-secondary" data-en="View Documentation" data-zh="查看文档">View Documentation</a>
-            </div>
-        </div>
-        <div class="hero-background"></div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title" data-en="About This Project" data-zh="关于本项目">About This Project</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="card-icon">📖</div>
-                    <h3 data-en="Comprehensive Research" data-zh="全面研究">Comprehensive Research</h3>
-                    <p data-en="Detailed information about all Yellowstone series, including the main series, 1883, 1923, and upcoming projects." data-zh="关于所有 Yellowstone 系列的详细信息，包括主系列、1883、1923 和即将推出的项目。">Detailed information about all Yellowstone series, including the main series, 1883, 1923, and upcoming projects.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">👨‍👩‍👧‍👦</div>
-                    <h3 data-en="Family Genealogy" data-zh="家族谱系">Family Genealogy</h3>
-                    <p data-en="Complete family tree mapping, character cards, relationship analysis, and generational insights." data-zh="完整的家族树映射、人物卡、关系分析和代际见解。">Complete family tree mapping, character cards, relationship analysis, and generational insights.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">📺</div>
-                    <h3 data-en="Episode Guides" data-zh="剧集指南">Episode Guides</h3>
-                    <p data-en="Per-season and per-episode summaries, key plot points, character development, and viewing recommendations." data-zh="每季和每集的摘要、关键情节点、角色发展和观看建议。">Per-season and per-episode summaries, key plot points, character development, and viewing recommendations.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">🌍</div>
-                    <h3 data-en="Multilingual Support" data-zh="多语言支持">Multilingual Support</h3>
-                    <p data-en="All documentation available in English, Chinese, French, Spanish, Japanese, and German." data-zh="所有文档均提供英语、中文、法语、西班牙语、日语和德语版本。">All documentation available in English, Chinese, French, Spanish, Japanese, and German.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Series Overview Section -->
-    <section id="series" class="series">
-        <div class="container">
-            <h2 class="section-title" data-en="Yellowstone Universe Series" data-zh="Yellowstone 宇宙系列">Yellowstone Universe Series</h2>
-            
-            <div class="series-grid">
-                <!-- Yellowstone Main -->
-                <div class="series-card main-series">
-                    <div class="series-header">
-                        <h3 data-en="Yellowstone" data-zh="Yellowstone">Yellowstone</h3>
-                        <span class="series-badge">Main Series</span>
-                    </div>
-                    <div class="series-info">
-                        <p class="series-status" data-en="Status: Completed (5 Seasons)" data-zh="状态：已完成（5 季）">Status: Completed (5 Seasons)</p>
-                        <p class="series-years" data-en="Years: 2018 - 2023" data-zh="年份：2018 - 2023">Years: 2018 - 2023</p>
-                        <p class="series-episodes" data-en="Episodes: 48" data-zh="剧集：48 集">Episodes: 48</p>
-                        <p class="series-desc" data-en="Follow the Dutton family as they defend their ranch against modern threats: government overreach, corporate greed, and indigenous land claims." data-zh="关注 Dutton 家族如何捍卫他们的牧场，抵御现代威胁：政府越权、企业贪心和原住民土地索赔。">Follow the Dutton family as they defend their ranch against modern threats: government overreach, corporate greed, and indigenous land claims.</p>
-                    </div>
-                    <div class="series-action">
-                        <a href="https://duttonlegacy.com/series/yellowstone" class="btn btn-outline" data-en="View Episodes" data-zh="查看剧集">View Episodes</a>
-                    </div>
-                </div>
-
-                <!-- 1883 -->
-                <div class="series-card prequel-series">
-                    <div class="series-header">
-                        <h3>1883</h3>
-                        <span class="series-badge">Prequel</span>
-                    </div>
-                    <div class="series-info">
-                        <p class="series-status" data-en="Status: Limited Series (1 Season)" data-zh="状态：限定剧集（1 季）">Status: Limited Series (1 Season)</p>
-                        <p class="series-years" data-en="Years: 2021 - 2022" data-zh="年份：2021 - 2022">Years: 2021 - 2022</p>
-                        <p class="series-episodes" data-en="Episodes: 10" data-zh="剧集：10 集">Episodes: 10</p>
-                        <p class="series-desc" data-en="Experience the origins of the Dutton family as James and Margaret establish their iconic ranch during America's Great Depression era." data-zh="体验 Dutton 家族的起源，James 和 Margaret 在美国大萧条时期建立他们标志性的牧场。">Experience the origins of the Dutton family as James and Margaret establish their iconic ranch during America's Great Depression era.</p>
-                    </div>
-                    <div class="series-action">
-                        <a href="https://duttonlegacy.com/series/1883" class="btn btn-outline" data-en="Learn More" data-zh="了解更多">Learn More</a>
-                    </div>
-                </div>
-
-                <!-- 1923 -->
-                <div class="series-card prequel-series">
-                    <div class="series-header">
-                        <h3>1923</h3>
-                        <span class="series-badge">Prequel</span>
-                    </div>
-                    <div class="series-info">
-                        <p class="series-status" data-en="Status: In Production (Season 2)" data-zh="状态：制作中（第 2 季）">Status: In Production (Season 2)</p>
-                        <p class="series-years" data-en="Years: 2023 - Present" data-zh="年份：2023 - 现在">Years: 2023 - Present</p>
-                        <p class="series-episodes" data-en="Episodes: 8 (Season 1)" data-zh="剧集：8 集（第 1 季）">Episodes: 8 (Season 1)</p>
-                        <p class="series-desc" data-en="Discover how the Dutton family adapts to Prohibition, economic hardship, and international conflicts in the 1920s." data-zh="了解 Dutton 家族如何在 1920 年代适应禁酒令、经济困难和国际冲突。">Discover how the Dutton family adapts to Prohibition, economic hardship, and international conflicts in the 1920s.</p>
-                    </div>
-                    <div class="series-action">
-                        <a href="https://duttonlegacy.com/series/1923" class="btn btn-outline" data-en="Learn More" data-zh="了解更多">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Documentation Section -->
-    <section id="docs" class="documentation">
-        <div class="container">
-            <h2 class="section-title" data-en="Documentation" data-zh="文档">Documentation</h2>
-            <div class="docs-grid">
-                <div class="doc-card">
-                    <h3>📄 README.md</h3>
-                    <p data-en="Quick start guide and project overview with key resources and contribution guidelines." data-zh="快速入门指南和项目概览，包含关键资源和贡献指南。">Quick start guide and project overview with key resources and contribution guidelines.</p>
-                    <a href="https://duttonlegacy.com/" class="doc-link">Read →</a>
-                </div>
-                <div class="doc-card">
-                    <h3>🔍 YELLOWSTONE_RESEARCH.md</h3>
-                    <p data-en="Comprehensive research document with series information, cast lists, production status, and thematic analysis." data-zh="完整的研究文档，包含系列信息、演员表、制作状态和主题分析。">Comprehensive research document with series information, cast lists, production status, and thematic analysis.</p>
-                    <a href="https://duttonlegacy.com/research" class="doc-link">Read →</a>
-                </div>
-                <div class="doc-card">
-                    <h3>👨‍👩‍👧‍👦 DUTTON_FAMILY_GENEALOGY.md</h3>
-                    <p data-en="Detailed family tree, character cards, relationship analysis, and generational insights across all series." data-zh="详细的家族树、人物卡、关系分析和跨系列的代际见解。">Detailed family tree, character cards, relationship analysis, and generational insights across all series.</p>
-                    <a href="https://duttonlegacy.com/family-tree" class="doc-link">Read →</a>
-                </div>
-                <div class="doc-card">
-                    <h3>📺 EPISODES_GUIDE.md</h3>
-                    <p data-en="Complete episode guides for all seasons with summaries, key plot points, and viewing recommendations." data-zh="所有季数的完整剧集指南，包括摘要、关键情节点和观看建议。">Complete episode guides for all seasons with summaries, key plot points, and viewing recommendations.</p>
-                    <a href="https://duttonlegacy.com/episodes" class="doc-link">Read →</a>
-                </div>
-                <div class="doc-card">
-                    <h3>🗺️ INDEX.md</h3>
-                    <p data-en="Navigation guide and index for finding information by topic, character, or reading path." data-zh="导航指南和索引，用于按主题、人物或阅读路径查找信息。">Navigation guide and index for finding information by topic, character, or reading path.</p>
-                    <a href="https://duttonlegacy.com/index" class="doc-link">Read →</a>
-                </div>
-                <div class="doc-card">
-                    <h3>💾 GitHub Repository</h3>
-                    <p data-en="Access the complete source code and contribute to the project on GitHub. All files support multiple languages." data-zh="在 GitHub 上访问完整的源代码并为项目做出贡献。所有文件都支持多种语言。">Access the complete source code and contribute to the project on GitHub. All files support multiple languages.</p>
-                    <a href="https://github.com/Starmadebydata/dutton-family-tree" class="doc-link" target="_blank">Visit Repository →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title" data-en="Key Features" data-zh="主要特性">Key Features</h2>
-            <div class="features-list">
-                <div class="feature-item">
-                    <span class="feature-number">48+</span>
-                    <h4 data-en="Episodes Covered" data-zh="覆盖的剧集">Episodes Covered</h4>
-                    <p data-en="Complete guides for Yellowstone main series" data-zh="Yellowstone 主系列的完整指南">Complete guides for Yellowstone main series</p>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-number">66+</span>
-                    <h4 data-en="Total Episodes" data-zh="总剧集">Total Episodes</h4>
-                    <p data-en="Including 1883, 1923, and upcoming series" data-zh="包括 1883、1923 和即将推出的系列">Including 1883, 1923, and upcoming series</p>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-number">6</span>
-                    <h4 data-en="Languages" data-zh="语言">Languages</h4>
-                    <p data-en="English, Chinese, French, Spanish, Japanese, German" data-zh="英语、中文、法语、西班牙语、日语、德语">English, Chinese, French, Spanish, Japanese, German</p>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-number">50+</span>
-                    <h4 data-en="Characters" data-zh="人物">Characters</h4>
-                    <p data-en="Detailed character cards and relationship analysis" data-zh="详细的人物卡和关系分析">Detailed character cards and relationship analysis</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact/CTA Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title" data-en="Get Started Now" data-zh="立即开始">Get Started Now</h2>
-            <p class="contact-desc" data-en="Choose your preferred way to explore the Yellowstone universe." data-zh="选择您喜欢的方式来探索 Yellowstone 宇宙。">Choose your preferred way to explore the Yellowstone universe.</p>
-            <div class="cta-buttons">
-                <a href="https://duttonlegacy.com/" class="btn btn-primary" data-en="Read Quick Start" data-zh="阅读快速入门">Read Quick Start</a>
-                <a href="https://duttonlegacy.com/family-tree" class="btn btn-secondary" data-en="View Family Tree" data-zh="查看家族树">View Family Tree</a>
-                <a href="https://github.com/Starmadebydata/dutton-family-tree" class="btn btn-outline" target="_blank" data-en="View on GitHub" data-zh="在 GitHub 上查看">View on GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4 data-en="About" data-zh="关于">About</h4>
-                    <p data-en="Dutton Family Tree is an independent, fan-made wiki for the Yellowstone television universe. All content respects original creators and copyright holders." data-zh="Dutton Family Tree 是 Yellowstone 电视宇宙的独立、粉丝制作的维基。所有内容都尊重原作者和版权所有人。">Dutton Family Tree is an independent, fan-made wiki for the Yellowstone television universe. All content respects original creators and copyright holders.</p>
-                </div>
-                <div class="footer-section">
-                    <h4 data-en="Quick Links" data-zh="快速链接">Quick Links</h4>
-                    <ul>
-                        <li><a href="https://duttonlegacy.com/" data-en="README" data-zh="README">README</a></li>
-                        <li><a href="https://duttonlegacy.com/family-tree" data-en="Family Tree" data-zh="家族树">Family Tree</a></li>
-                        <li><a href="https://duttonlegacy.com/episodes" data-en="Episodes" data-zh="剧集">Episodes</a></li>
-                        <li><a href="https://duttonlegacy.com/research" data-en="Research" data-zh="研究">Research</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4 data-en="Legal" data-zh="法律">Legal</h4>
-                    <ul>
-                        <li><a href="#" data-en="License" data-zh="许可证">License</a></li>
-                        <li><a href="#" data-en="Privacy" data-zh="隐私">Privacy</a></li>
-                        <li><a href="#" data-en="Contact" data-zh="联系">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p data-en="© 2025 Dutton Family Tree. All rights reserved. Yellowstone is a trademark of Paramount." data-zh="© 2025 Dutton Family Tree。保留所有权利。Yellowstone 是 Paramount 的商标。">© 2025 Dutton Family Tree. All rights reserved. Yellowstone is a trademark of Paramount.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <div class="container">
+        <a href="https://duttonlegacy.com" class="link-wrapper" title="Visit Dutton Family Tree">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4af37;stop-opacity:0.1'/%3E%3Cstop offset='100%25' style='stop-color:%238b0000;stop-opacity:0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='600' fill='%230f1419'/%3E%3Crect width='1200' height='600' fill='url(%23grad)'/%3E%3Ctext x='600' y='200' font-size='120' font-weight='bold' fill='%23d4af37' text-anchor='middle' font-family='serif'%3EYellowstone%3C/text%3E%3Ctext x='600' y='280' font-size='80' font-weight='bold' fill='%238b0000' text-anchor='middle' font-family='serif'%3EUniverse%3C/text%3E%3Ctext x='600' y='380' font-size='40' fill='%23c0c0c0' text-anchor='middle'%3EDutton Family Tree%3C/text%3E%3Ctext x='600' y='450' font-size='24' fill='%23888888' text-anchor='middle'%3EClick to explore%3C/text%3E%3Ccircle cx='600' cy='520' r='8' fill='%23d4af37'/%3E%3Ccircle cx='620' cy='520' r='8' fill='%23d4af37'/%3E%3Ccircle cx='640' cy='520' r='8' fill='%23d4af37'/%3E%3C/svg%3E" alt="Dutton Family Tree - Click to Enter">
+        </a>
+    </div>
 </body>
 </html>
