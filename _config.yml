@@ -1,0 +1,60 @@
+# GitHub Pages Configuration for Dutton Family Tree
+
+# Site settings
+title: Dutton Family Tree
+description: A comprehensive wiki for the Yellowstone universe
+author: Dutton Family Tree Project
+url: https://starmadebydata.github.io/dutton-family-tree
+
+# Build settings
+markdown: kramdown
+theme: null  # Using custom CSS, no theme
+plugins:
+  - jekyll-seo-tag
+
+# SEO
+google_site_verification: ""
+
+# Collections
+collections:
+  docs:
+    output: false
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Exclude files from Jekyll processing
+exclude:
+  - README.md
+  - CHANGELOG.md
+  - LICENSE.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - .git
+  - .github
+  - EPISODES_GUIDE.md
+  - YELLOWSTONE_RESEARCH.md
+  - DUTTON_FAMILY_GENEALOGY.md
+  - INDEX.md
+
+# Analytics (optional - add your tracking ID)
+# google_analytics: ""
+
+# Permalink structure
+permalink: /:year/:month/:day/:title/
+
+# Pagination
+paginate: 10
+paginate_path: "/page/:num/"
+
+# Locale
+locale: "en-US"
+
+# Timezone
+timezone: "UTC"
